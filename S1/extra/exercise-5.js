@@ -5,4 +5,5 @@ for (let i = 0; i < products.length; i++) {
     sellTotal += products[i].sellCount;
 }
 
-console.log(sellTotal / products.length);
+let sellTotalAvg = sellTotal/products.length;
+console.log(sellTotalAvg);
