@@ -6,11 +6,11 @@ let longMovie = [];
 
 for (let i = 0; i < movies.length; i++) {
     if (movies[i].durationInMinutes >= 200) {
-        longMovie.push(movies[i].name);
+        longMovie.push(movies[i]);
     } else if (movies[i].durationInMinutes >= 100) {
-        averageMovie.push(movies[i].name);
+        averageMovie.push(movies[i]);
     } else {
-        shortMovie.push(movies[i].name);
+        shortMovie.push(movies[i]);
     }
 }
 
