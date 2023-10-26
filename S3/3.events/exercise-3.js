@@ -5,3 +5,5 @@ function textLogger() {
 }
 
 impElem.addEventListener("input", textLogger);
+
+//Mirar el ejercicio anterior

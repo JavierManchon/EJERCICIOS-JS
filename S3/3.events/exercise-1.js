@@ -2,8 +2,8 @@ let newButton = document.createElement("button");
 newButton.id = "btnToClick";
 document.body.appendChild(newButton);
 
-function textLogger() {
-    console.log("Has clicado correctamente el boton");
+function textLogger(e) {
+    console.log(e);
 }
 
 document.getElementById("btnToClick").addEventListener("click", textLogger);

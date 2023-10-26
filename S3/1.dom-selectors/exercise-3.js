@@ -1,3 +1,3 @@
-for (item of document.getElementsByTagName("p")) {
-    console.log(item.textContent);
+for (item of document.querySelectorAll("p")) {
+    console.log(item);
 }

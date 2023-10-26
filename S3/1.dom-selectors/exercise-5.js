@@ -1,3 +1,3 @@
-for (tag of document.querySelectorAll("span[data-function='testMe'")) {
-    console.log(tag.textContent);
+for (tag of document.querySelectorAll("span[data-function='testMe']")) {
+    console.log(tag);
 }

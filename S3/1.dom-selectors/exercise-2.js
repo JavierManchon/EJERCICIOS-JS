@@ -1,1 +1,1 @@
-console.log(document.getElementById("pillado"));
+console.log(document.querySelector("#pillado"));
