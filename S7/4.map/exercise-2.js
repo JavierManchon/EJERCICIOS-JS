@@ -10,5 +10,11 @@ let anacletoFunction = (objs) => {
     return objNames;
 }
 
-console.log(anacletoFunction(users));
+let Anacleto = anacletoFunction(users);
+console.log(Anacleto);
 console.log(users);
+
+//Mas optimo
+
+let AncletoList = users.map(user => user.name.charAt(0) === "A" ? "Anacleto" : user.name);
+console.log(AncletoList);

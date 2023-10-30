@@ -17,3 +17,5 @@ let avgRpg = (videogames) => {
 }
 
 console.log(avgRpg(videogames));
+
+//revisar

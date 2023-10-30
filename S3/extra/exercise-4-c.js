@@ -8,12 +8,12 @@ for (let country of countries) {
     h4$$.textContent = country.title;
     let img$$ = document.createElement("img");
     img$$.setAttribute("src", country.imgUrl);
-    let button$$ = document.createElement("button");
-    button$$.textContent = txtButton;
-    button$$.addEventListener("click", removeElement);
+    let removeButton$$ = document.createElement("button");
+    removeButton$$.textContent = txtButton;
+    removeButton$$.addEventListener("click", removeElement);
     div$$.appendChild(h4$$);
     div$$.appendChild(img$$);
-    div$$.appendChild(button$$);
+    div$$.appendChild(removeButton$$);
     li$$.appendChild(div$$);
     ul$$.appendChild(li$$);
 }

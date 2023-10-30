@@ -11,3 +11,7 @@ let visitCheck = (objs) => {
 }
 
 console.log(visitCheck(cities));
+
+// mas optimo
+
+let visitedCities = cities.map(city => city.isVisited ? city.name + " (visitado)" : city.name);

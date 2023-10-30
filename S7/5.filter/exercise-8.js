@@ -6,5 +6,5 @@ button$$.addEventListener("click", consoleLogger)
 function consoleLogger() {
     input$$ = document.body.querySelector("input[data-function='toFilterStreamers']");
     let includesChar = streamers.filter(streamer => streamer.name.includes(input$$.value));
-    return console.log(includesChar);
+    console.log(includesChar);
 }

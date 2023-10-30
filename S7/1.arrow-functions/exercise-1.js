@@ -1,5 +1,6 @@
 let sumNum = (a = 10, b = 5) => {
-    return console.log(a + b);
+    //No hay que poner return, porque console log realiza una accion pero no devuelve nada
+    console.log(a + b);
 }
 
 sumNum();
