@@ -35,7 +35,8 @@ async function loggingData() {
     }
 
     document.body.appendChild(p$$);
-    let eraser$$ = document.createElement("button")
+    let eraser$$ = document.createElement("button");
+    eraser$$.textContent = "X";
     p$$.appendChild(eraser$$);
     
 

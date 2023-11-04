@@ -65,6 +65,20 @@ const renderQuestion = (questions) => {
     }
 }
 
+//Esta funcion comprueba si la pregunta tiene ya alguna respuesta marcada o no, y las marca eliminando las respuesta ya marcadas
+function questionMarker() {
+    const siblings = this.parentNode.childNodes;
+    for (let sibling of siblings) {
+        if (sibling.classList.contains("marked") && sibling !== this) {
+            sibling.classList.remove("marked");
+        }
+    };
+
+    if (!this.classList.contains("marked")) {
+        this.classList.add("marked");
+    }
+}
+
 //Funcion que se ejecuta cuando pulsas startGame
 const startGame = async () => {
 
@@ -72,12 +86,40 @@ const startGame = async () => {
 
     let qSelection = questionSelector(trivialStructure);
 
+    //igual tengo que eliminar la igualdad
     let renderedQuestions = renderQuestion(qSelection);
 
-    return renderedQuestions;
+    let li$$ = document.querySelectorAll("li");
+    for (let answer of li$$) {
+        answer.addEventListener("click", questionMarker);
+    }
 
-    //TODO fucnionalidad de seleccion de respuestas
+    //Funcion para comprobar si las preguntas son correctas y puntuacion
+    const questionChecker = () => {
+        let score = 0;
+        marked$$ = document.querySelectorAll(".marked");
+
+        let correctAns = [];
+        for (let question of qSelection) {
+            correctAns.push(question.correct_answer);
+        }
+        
+        for (let i = 0; i < correctAns.length; i++) {
+            if (correctAns[i] === marked$$[i].textContent) {
+                score++;
+            }
+            //TODO: Dime cual es la respuesta correcta si fallo
+        }
+
+        //BUG: Arreglar que me imprima siempre 0 antes de dar el nuevo resultado.
+        console.log(score);
+    }
+
+    let questionCheck = document.querySelector('button[data-function="check-game"]');
+    questionCheck.addEventListener("click", questionChecker);
+
 }
 
 let startButton = document.querySelector('button[data-function="start-game"]');
 startButton.addEventListener("click", startGame);
+
