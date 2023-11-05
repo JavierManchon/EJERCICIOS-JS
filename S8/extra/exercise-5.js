@@ -81,13 +81,15 @@ function questionMarker() {
 
 //Funcion que se ejecuta cuando pulsas startGame
 const startGame = async () => {
+    
+    let questionCheck = document.querySelector('button[data-function="check-game"]');
 
     let trivialStructure = await getData(urlApi);
 
     let qSelection = questionSelector(trivialStructure);
 
     //igual tengo que eliminar la igualdad
-    let renderedQuestions = renderQuestion(qSelection);
+    renderQuestion(qSelection);
 
     let li$$ = document.querySelectorAll("li");
     for (let answer of li$$) {
@@ -95,7 +97,9 @@ const startGame = async () => {
     }
 
     //Funcion para comprobar si las preguntas son correctas y puntuacion
+    //Buscar una forma de sacar esta funcion de aqui
     const questionChecker = () => {
+
         let score = 0;
         marked$$ = document.querySelectorAll(".marked");
 
@@ -115,11 +119,9 @@ const startGame = async () => {
         console.log(score);
     }
 
-    let questionCheck = document.querySelector('button[data-function="check-game"]');
     questionCheck.addEventListener("click", questionChecker);
 
 }
 
 let startButton = document.querySelector('button[data-function="start-game"]');
 startButton.addEventListener("click", startGame);
-
